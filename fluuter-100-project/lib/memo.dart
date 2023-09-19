@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:project/memoList.dart';
 
 import 'models/memo_dto.dart';
 
@@ -12,7 +11,7 @@ class Memo extends StatefulWidget {
 }
 
 class _MemoState extends State<Memo> {
-  var inputController = TextEditingController();
+  TextEditingController inputController = TextEditingController();
   String selectedDay = "";
   var value = "";
   var memoContent = "";
@@ -100,17 +99,16 @@ class _MemoState extends State<Memo> {
                 height: 50,
                 child: ElevatedButton(
                     onPressed: () {
-                      // var memo = getMemo(value);
-                      setState(() {
-                        // memoList.add(memo);
-                        value = inputController.text;
-                      });
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const MemoList(),
-                        ),
-                      );
+                      // setState(() {
+                      //   value = inputController.text;
+                      // });
+                      // Navigator.push(
+                      //   context,
+                      //   MaterialPageRoute(
+                      //     builder: (context) => const MemoList(),
+                      //   ),
+                      // );
+                      Navigator.of(context).pop(inputController.value.text);
                     },
                     child: const Text("Save")),
               ),

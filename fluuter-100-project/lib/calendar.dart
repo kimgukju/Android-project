@@ -23,7 +23,7 @@ class _CalendarState extends State<Calendar> {
   Map<DateTime, List<CalendarDto>> events = {};
   late final ValueNotifier<List<CalendarDto>> selectedEvent;
   // 컨트롤러 만들기
-  final _eventController = TextEditingController();
+  final TextEditingController _eventController = TextEditingController();
 
   @override
   void initState() {
@@ -121,8 +121,8 @@ class _CalendarState extends State<Calendar> {
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: ListTile(
-                        onTap: () => debugPrint(""),
-                        title: Text('${value[index]}'),
+                        onTap: () => print(""),
+                        title: Text("${value[index]}"),
                       ),
                     );
                   },

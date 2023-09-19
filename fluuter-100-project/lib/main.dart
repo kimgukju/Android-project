@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:project/calendar.dart';
-import 'package:project/memo.dart';
+import 'package:project/memoList.dart';
 
 void main() async {
   await initializeDateFormatting();
@@ -68,7 +68,7 @@ class _StartPage extends State<StartPage> {
               IconButton(
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => const Memo()));
+                      MaterialPageRoute(builder: (context) => const MemoList()));
                 },
                 icon: const Icon(
                   Icons.note_add,
