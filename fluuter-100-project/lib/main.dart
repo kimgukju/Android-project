@@ -14,17 +14,25 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      localizationsDelegates: [
+      builder: (context, child) => MediaQuery(
+        data: MediaQuery.of(context).copyWith(
+      textScaleFactor: 1.0,
+    ), child: child!),
+      theme: ThemeData(
+        primarySwatch: Colors.purple,
+        fontFamily: 'Prompt',
+      ),
+      localizationsDelegates: const [
         GlobalMaterialLocalizations.delegate, // Add this line
         GlobalWidgetsLocalizations.delegate, // Add this line
         GlobalCupertinoLocalizations.delegate, // Ad
       ],
-      supportedLocales: [
+      supportedLocales: const [
         Locale('ko', 'KR'),
       ],
-      home: StartPage(),
+      home: const StartPage(),
     );
   }
 }

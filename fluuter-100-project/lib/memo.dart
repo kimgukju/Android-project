@@ -37,7 +37,7 @@ class _MemoState extends State<Memo> {
               ),
               // 패딩을 줘서 넓이 조절
               Padding(
-                padding: const EdgeInsets.all(25),
+                padding: const EdgeInsets.all(20),
                 child: GestureDetector(
                   onTap: () => FocusScope.of(context).unfocus(),
                   child: TextField(
@@ -59,7 +59,7 @@ class _MemoState extends State<Memo> {
                     onChanged: (text) {
                       value = text;
                     },
-                    maxLines: 10,
+                    maxLines: 5,
                   ),
                 ),
               )
