@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:project/service/memo_service.dart';
 
 import 'models/memo_dto.dart';
 
@@ -98,8 +99,10 @@ class _MemoState extends State<Memo> {
                 height: 50,
                 child: ElevatedButton(
                     onPressed: () {
-                      Navigator.of(context).pop("내용: ${inputController.value.text}\n날짜: $selectedDay");
-                      
+                      var memo = getMemo(
+                          "내용: ${inputController.value.text}\n날짜: $selectedDay");
+                      MemoService().insert(memo);
+                      Navigator.of(context).pop();
                     },
                     child: const Text("Save")),
               ),

@@ -17,9 +17,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       builder: (context, child) => MediaQuery(
-        data: MediaQuery.of(context).copyWith(
-      textScaleFactor: 1.0,
-    ), child: child!),
+          data: MediaQuery.of(context).copyWith(
+            textScaleFactor: 1.0,
+          ),
+          child: child!),
       theme: ThemeData(
         primarySwatch: Colors.purple,
         fontFamily: 'Prompt',
@@ -75,8 +76,10 @@ class _StartPage extends State<StartPage> {
               const Text("     "),
               IconButton(
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => const MemoList()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const MemoList()));
                 },
                 icon: const Icon(
                   Icons.note_add,

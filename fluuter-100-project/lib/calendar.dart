@@ -71,7 +71,7 @@ class _CalendarState extends State<Calendar> {
               // 타이틀 언어 커스텀
               titleTextStyle: const TextStyle(
                 fontSize: 20.0,
-                color: Colors.blue,
+                color: Colors.black,
               ),
               // 왼쪽,오른쪽 넘어가는 버튼 커스텀
               headerPadding: const EdgeInsets.symmetric(vertical: 4.0),
@@ -155,11 +155,7 @@ class _CalendarState extends State<Calendar> {
                       Navigator.of(context).pop();
                       selectedEvent.value = _getEventsDay(selectedDay);
                     },
-                    child: const Text("확인"),
-                  ),
-                  ElevatedButton(
-                    onPressed: () {},
-                    child: const Text("취소"),
+                    child: const Text("저장"),
                   ),
                 ],
               );

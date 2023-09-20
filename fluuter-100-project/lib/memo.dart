@@ -98,8 +98,12 @@ class _MemoState extends State<Memo> {
                 height: 50,
                 child: ElevatedButton(
                     onPressed: () {
-                      Navigator.of(context).pop("내용: ${inputController.value.text}\n날짜: $selectedDay");
-                      
+                      if (selectedDay != "") {
+                        Navigator.of(context).pop(
+                            "내용: ${inputController.value.text}\n날짜: $selectedDay");
+                      } else {
+                        Navigator.of(context).pop(inputController.value.text);
+                      }
                     },
                     child: const Text("Save")),
               ),
@@ -122,12 +126,6 @@ class _MemoState extends State<Memo> {
         selectedDay = DateFormat('yy/MM/dd').format(selected);
       });
     }
-    // 손안댔을때는 지금 날짜 표현하게 해보기 ㅇ.ㅇ
-    // else if (selected == null) {
-    //   setState(() {
-    //     selectedDay = DateFormat('yy/MM/dd').format(DateTime.now());
-    //   });
-    // }
     return null;
   }
 }
